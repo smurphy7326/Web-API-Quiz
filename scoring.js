@@ -14,7 +14,7 @@ highscores.forEach(function(score) {
     liTag.textContent = score.initials + " - " + score.score;
 
 // show it on the page
-    var olEL = document.getElementById("highscores");
+    var olEl = document.getElementById("highscores");
     olEl.appendChild(liTag);
     });
 
