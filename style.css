@@ -1,0 +1,46 @@
+/* styling CSS */
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a { 
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.wrapper {
+    margin: 100px auto 0 auto;
+    max-width: 600px;
+}
+
+.hide {
+    display: none;
+}
+
+.start {
+    text-align: center;
+}
+
+.scores {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.feedback {
+    font-style: normal;
+    font-size: large;
+    margin-top: 10px;
+    padding-top: 10px;
+    color: black;
+    border-top: 2px solid rgba(174, 0, 255, 0.932);
+}
+
+.timer {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+

@@ -26,7 +26,7 @@ var questions = [
     },
 
     {
-    title: "Which of the following is used to determine the heoght of an image?",
+    title: "Which of the following is used to determine the height of an image?",
     choices: ["Width", "Height", "Border", "Hover"],
     answer: "Height"
     },
@@ -38,29 +38,22 @@ var questions = [
     },
 
     {
-    title:
-    choices:
-    answer:
-    }
+    title: "Inside which HTML element do we put the javascript?",
+    choices: ["javascript", "script", "js", "scripting"],
+    answer: "script"
+    }, 
 
 
     {
-    title:
-    choices:
-    answer:
-    }
+    title: "How do you create an unordered list in HTML?",
+    choices: ["li", "ol", "i", "ul"],
+    answer: "ul"
+    },
 
 
     {
-    title:
-    choices:
-    answer:
+    title: "In Javascript what is a block of code called that is used to perform a certain task?",
+    choices: ["String", "Variable", "Function", "Declearation"],
+    answer: "String"
     }
-
-
-    {
-    title:
-    choices:
-    answer:
-    }
-]
+];
