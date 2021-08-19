@@ -8,7 +8,6 @@ var submitBtn = document.querySelector("#submit");
 var startBtn = document.querySelector("#start");
 var initialsEl = document.querySelector("#initials");
 var feedbackEl = document.querySelector("#feedback");
-var startQuizButton = document.getElementById("startbtn");
 
 // Quiz variables
 var currentQuestionIndex = 0;
@@ -59,14 +58,14 @@ function startQuiz() {
 function questionClick() {
     // if the user guessed wrong...
     if (this.value !== questions[currentQuestionIndex].answer) {
-        time -=15;
+        time -=10;
 
         if (time < 0) {
             time = 0;
         }
 
         // New Timer on Page
-        timner.El.textContent = time;
+        timerEl.textContent = time;
         feedbackEl.textContent = "This is Incorrect";
         feedbackEl.style.fontSize = "150%";
     } else {
@@ -77,7 +76,7 @@ function questionClick() {
     // Flashing the correct answer
     feedbackEl.setAttribute("class", "feedback");
     setTimeout(function() {
-        feedbackEl.setAttribute("class", "feedbackhide");
+        feedbackEl.setAttribute("class", "feedback hide");
     }, 1000);
 
     // Next Question after the flash
@@ -91,11 +90,12 @@ function questionClick() {
     }
 }
 
+// End Quiz and stop timer
 function quizEnd() {
     clearInterval(timerId);
 
 //End screen page
-    var endScreen = document.getElementById("end-screen");
+    var endScreenEl = document.getElementById("end-screen");
     endScreenEl.removeAttribute("class");
 
 //Final Score 
