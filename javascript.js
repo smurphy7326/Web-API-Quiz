@@ -147,7 +147,7 @@ function checkForEnter(event) {
 }
 
 // submit initials
-submitBtn.onclick = saveHighscore;
+submitBtn.onclick = saveHighScore;
 
 // start Quiz button
 startBtn.onclick = startQuiz;
