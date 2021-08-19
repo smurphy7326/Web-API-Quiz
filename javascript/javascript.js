@@ -3,11 +3,12 @@
 
 var questionsEl = document.querySelector("#questions");
 var timerEl = document.querySelector("#time");
-var choicesEL = document.queryselector("#choices");
+var choicesEL = document.querySelector("#choices");
 var submitBtn = document.querySelector("#submit");
 var startBtn = document.querySelector("#start");
 var initialsEl = document.querySelector("#initials");
 var feedbackEl = document.querySelector("#feedback");
+var startQuizButton = document.getElementById("startbtn");
 
 // Quiz variables
 var currentQuestionIndex = 0;
@@ -23,10 +24,11 @@ function startQuiz() {
     questionsEl.removeAttribute("class");
 
     //Start Timer Section
-    timerID = setAttribute(clockTick, 1000);
+    timerID = setInterval(clockTick, 1000);
 
     //Show starting Time
     timerEl.textContent = time;
+
     getQuestion();
 }
 
@@ -47,6 +49,8 @@ function startQuiz() {
         choiceNode.setAttribute ("value", choice);
 
     choiceNode.textContent = i + 1 + ". " + choice;
+
+    choiceNode.onclick = questionClick;
 
     choicesEl.appendChild(choiceNode);
   });
