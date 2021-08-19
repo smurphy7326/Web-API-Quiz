@@ -101,4 +101,43 @@ function quizEnd() {
     questionsEl.setAttribute("class", "hide");
 }
 
+//Timer countdown
+function clockTick() {
+    time--;
+    timerEl.textContent = time;
+
+// When the timer runs out
+    if (time <=0) {
+        quizEnd();
+    }
+}
+
+function saveHighScore() {
+    var initials = initialsEl.value.trim();
+
+
+if (initials !== "") {
+    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+
+// new score if to try again
+    var newScore = {
+        score: time,
+        initials: initials
+};
+
+//save to the webpage
+    highscores.push(newScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+    //this makes it go to that page for the scoring page
+    window.location.href = "score.html";
+  }
+}
+
+function checkForEnter(event) {
+    if (event.key === "Enter") {
+        saveHighScore();
+    }
+}
 
