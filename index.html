@@ -11,7 +11,7 @@
 
     <body>
         <body>
-            <div class="scores"><a href="highscores.html">View Highscores</a></div>
+            <div class="scores"><a href="score.html">View Highscores</a></div>
         
             <div class="timer">Time: <span id="time">0</span></div>
         
@@ -21,7 +21,7 @@
                 <p>
                   Let's see how well you all can remember the first few weeks of classes! 
                 </p>
-                <button id ="startbtn">Start Quiz</button>
+                <button id ="start">Start Quiz</button>
               </div>
         
               <div id="questions" class="hide">
@@ -30,6 +30,8 @@
               </div>
         
               <div id="end-screen" class="hide">
+                  <h2 id="question-title"></h2>
+                  <div id="choices" class="choices"></div>
                 <h2>Completed!</h2>
                 <p>Your final score is <span id="final-score"></span>.</p>
                 <p>

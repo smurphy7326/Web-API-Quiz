@@ -5,11 +5,11 @@ var questionsEl = document.querySelector("#questions");
 var timerEl = document.querySelector("#time");
 var choicesEl = document.querySelector("#choices");
 var submitBtn = document.querySelector("#submit");
-var startBtn = document.querySelector("#startbtn");
+var startBtn = document.querySelector("#startBtn");
 var initialsEl = document.querySelector("#initials");
 var feedbackEl = document.querySelector("#feedback");
 
-// Quiz variables
+// quiz state variables
 var currentQuestionIndex = 0;
 var time = questions.length * 10;
 var timerId;
@@ -122,7 +122,7 @@ function saveHighScore() {
 
 
 if (initials !== "") {
-    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+    var HighScore = JSON.parse(window.localStorage.getItem("HighScore")) || [];
 
 
 // new score if to try again
@@ -132,8 +132,8 @@ if (initials !== "") {
 };
 
 //save to the webpage
-    highscores.push(newScore);
-    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+    HighScore.push(newScore);
+    window.localStorage.setItem("HighScore", JSON.stringify(HighScore));
 
     //this makes it go to that page for the scoring page
     window.location.href = "score.html";
