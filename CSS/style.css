@@ -73,6 +73,20 @@ background-color: grey;
 }
 
 input[type="text"] {
-    font-size: 100%;
+    font-size: large;
 }
 
+ol {
+    padding-left: 0px;
+    max-height: 350px;
+    overflow: auto;
+}
+
+li {
+    padding: 5px;
+    list-style: decimal inside none;
+}
+
+li:nth-child(odd) {
+    background-color: #c8c4cf;
+}
