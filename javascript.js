@@ -94,6 +94,11 @@ function questionClick() {
 function quizEnd() {
     clearInterval(timerId);
 
+
+//Final Score 
+    var finalScoreEl = document.getElementById("final-score");
+    finalScoreEl.textContent = gametime;
+
 //End screen page
     var endScreenEl = document.getElementById("end-screen");
     endScreenEl.removeAttribute("class");
@@ -106,10 +111,7 @@ function quizEnd() {
 function clockTick() {
     gametime--;
     timerEl.textContent = gametime;
-
-//Final Score 
-    var finalScoreEl = document.getElementById("final-score");
-    finalScoreEl.textcontent = gametime;
+    finalScoreEl = gametime;
 
 // When the timer runs out
     if (gametime <=0) {
