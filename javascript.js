@@ -5,13 +5,13 @@ var questionsEl = document.querySelector("#questions");
 var timerEl = document.querySelector("#time");
 var choicesEl = document.querySelector("#choices");
 var submitBtn = document.querySelector("#submit");
-var startBtn = document.querySelector("#startBtn");
+var startBtn = document.querySelector("#start");
 var initialsEl = document.querySelector("#initials");
 var feedbackEl = document.querySelector("#feedback");
 
 // quiz state variables
 var currentQuestionIndex = 0;
-var time = questions.length * 10;
+var gametime = 10 * 15;
 var timerId;
 
 //function to start the quiz
@@ -23,10 +23,10 @@ function startQuiz() {
     questionsEl.removeAttribute("class");
 
     //Start Timer Section
-    timerID = setInterval(clockTick, 1000);
+    timerId = setInterval(clockTick, 1000);
 
     //Show starting Time
-    timerEl.textContent = time;
+    timerEl.textContent = gametime;
 
     getQuestion();
 }
@@ -35,7 +35,7 @@ function startQuiz() {
     var currentQuestion = questions[currentQuestionIndex]; 
 
     // Converts title to question
-    var titleEl = document.getElementById("question-title")
+    var titleEl = document.getElementById("question-title");
     titleEl.textContent = currentQuestion.title;
 
     //Clear out old questions so they are not asked again
@@ -58,14 +58,14 @@ function startQuiz() {
 function questionClick() {
     // if the user guessed wrong...
     if (this.value !== questions[currentQuestionIndex].answer) {
-        time -=10;
+        gametime -=10;
 
-        if (time < 0) {
-            time = 0;
+        if (gametime < 0) {
+            gametime = 0;
         }
 
         // New Timer on Page
-        timerEl.textContent = time;
+        timerEl.textContent = gametime;
         feedbackEl.textContent = "This is Incorrect";
         feedbackEl.style.fontSize = "150%";
     } else {
@@ -98,21 +98,21 @@ function quizEnd() {
     var endScreenEl = document.getElementById("end-screen");
     endScreenEl.removeAttribute("class");
 
-//Final Score 
-    var finalScoreEl = document.getElementById("final-score");
-    finalScoreEl.textcontent = time;
-
 // Questions Section
     questionsEl.setAttribute("class", "hide");
 }
 
 //Timer countdown
 function clockTick() {
-    time--;
-    timerEl.textContent = time;
+    gametime--;
+    timerEl.textContent = gametime;
+
+//Final Score 
+    var finalScoreEl = document.getElementById("final-score");
+    finalScoreEl.textcontent = gametime;
 
 // When the timer runs out
-    if (time <=0) {
+    if (gametime <=0) {
         quizEnd();
     }
 }
@@ -120,23 +120,24 @@ function clockTick() {
 function saveHighScore() {
     var initials = initialsEl.value.trim();
 
-
+// Saved Stores to see 
 if (initials !== "") {
-    var HighScore = JSON.parse(window.localStorage.getItem("HighScore")) || [];
+    var highscores = 
+        JSON.parse(window.localStorage.getItem("highscores")) || [];
 
 
 // new score if to try again
     var newScore = {
-        score: time,
+        score: gametime,
         initials: initials
 };
 
-//save to the webpage
-    HighScore.push(newScore);
-    window.localStorage.setItem("HighScore", JSON.stringify(HighScore));
+  // save to localstorage
+    highscores.push(newScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
 
     //this makes it go to that page for the scoring page
-    window.location.href = "score.html";
+    window.location.href = "highscores.html";
   }
 }
 
