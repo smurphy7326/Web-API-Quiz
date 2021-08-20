@@ -76,4 +76,4 @@ The UCONN Coding Bootcamp assigned us a task to make a timed multiple choice qui
 
 ![image](./assets/images/Week-4-leaderboard-many.jpg)
 
-[Web-API](https://smurphy7326.github.io/javascript-password-generator/)
+[Web-API](https://smurphy7326.github.io/Web-API-Quiz/)
