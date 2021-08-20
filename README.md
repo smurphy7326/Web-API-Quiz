@@ -66,14 +66,14 @@ The UCONN Coding Bootcamp assigned us a task to make a timed multiple choice qui
 * Updated the README.md to include links and pictures
 
 
-![image](./assets/Images/Week-4-start-quiz.jpg)
+![image](./Assets/Images/Week-4-start-quiz.jpg)
 
-![image](./assets/Images/Week-4-first-question.jpg)
+![image](./Assets/Images/Week-4-first-question.jpg)
 
-![image](./assets/Images/Week-4-final-page.jpg)
+![image](./Assets/Images/Week-4-final-page.jpg)
 
-![image](./assets/Images/Week-4-leaderboard.jpg)
+![image](./Assets/Images/Week-4-leaderboard.jpg)
 
-![image](./assets/Images/Week-4-leaderboard-many.jpg)
+![image](./Assets/Images/Week-4-leaderboard-many.jpg)
 
 [Web-API](https://smurphy7326.github.io/Web-API-Quiz/)
